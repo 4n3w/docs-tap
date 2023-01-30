@@ -188,7 +188,7 @@ Example output
 ```
 
 The Trivy integration can work with or without the SCST - Store integration.
-The values.yaml file is slightly different for each configuration.
+The `values.yaml` file is slightly different for each configuration.
 
 ## Supply Chain Security Tools - Store integration
 
@@ -262,7 +262,7 @@ Where:
 
 **Without Supply Chain Security Tools - Store Integration:** If you don’t want
 to enable the SCST - Store integration, explicitly deactivate the integration by
-appending the following fields to the values.yaml file that is enabled by
+appending the following fields to the `values.yaml` file that is enabled by
 default:
 
 ```yaml
@@ -351,7 +351,7 @@ Install the `oras` cli utilizing their [instructions](https://oras.land/cli/)
 
 >Note: Using a relocated database means you are taking responsibility for keeping it up to date in a timely manner to ensure security scans are relevant. Stale databases weaken your security posture.
 
-If you have a host with access, you can use oras cli to perform a copy.
+If you have a host with access, you can use the `oras` cli to perform a copy.
 ```shell
 oras copy -r ghcr.io/aquasecurity/trivy-db:2 registry.company.com/project_name/trivy-db:2 # the tag of 2 is required
 
@@ -361,7 +361,7 @@ Copied ghcr.io/aquasecurity/trivy-db:2 => registry.company.com/project_name/triv
 Digest: sha256:ed57874a80499e858caac27fc92e4952346eb75a2774809ee989bcd2ce48897a
 ```
 
-If not, you can use oras cli to download the database and manifest and then push to your registry.
+If not, you can use the `oras` cli to download the database and manifest and then push to your registry.
 
 1. Download the trivy-db
    ```shell
@@ -391,7 +391,7 @@ If not, you can use oras cli to download the database and manifest and then push
 
 ### Update data values with db repository url
 
-Edit your values.yaml to add the following
+Edit your `values.yaml` to add the following
 ```yaml
 trivy:
   db:
@@ -419,7 +419,7 @@ trivy.tar.gz 100%[==>]  46.12M  50.7MB/s    in 0.9s
 2023-01-25 10:47:55 (50.7 MB/s) - ‘trivy.tar.gz’ saved [48363295/48363295]
 ```
 
-### Relocated the CLI to your registry
+### Relocate the CLI to your registry
 ```shell
 oras push registry.company.com/project_name/trivy-cli:0.36.0 \
 --artifact-type trivy/cli \
@@ -433,7 +433,7 @@ Digest: sha256:5bdb18378e8f66a72f4bef4964edeccfcc2f21883e7a6caca6dbf7a3d7233696
 
 ### Update data values with CLI repository url
 
-Edit your values.yaml to add the location of your cli.
+Edit your `values.yaml` to add the location of your cli.
 
 ```yaml
 trivy:
@@ -484,7 +484,7 @@ plugin.yaml 100%[==>]     909  --.-KB/s    in 0s
 2023-01-30 10:46:32 (54.2 MB/s) - ‘plugin.yaml’ saved [909/909]
 ```
 
-### Relocated the Plugin and Yaml to your registry
+### Relocate the Plugin and Yaml to your registry
 ```shell
 TRIVY_AQUA_PLUGIN_VERSION="v0.115.6"
 REPOSITORY_URL="registry.company.com/project_name/trivy-aqua-plugin:$TRIVY_AQUA_PLUGIN_VERSION"
@@ -504,7 +504,7 @@ Digest: sha256:791274e44b97fad98edf570205fddc1b0bc21c56d3d54565ad9475fd4da969ae
 
 ### Update data values with Aqua Plugin repository url
 
-Edit your values.yaml to add the location of your cli.
+Edit your `values.yaml` to add the location of your CLI.
 
 ```yaml
 trivy:
