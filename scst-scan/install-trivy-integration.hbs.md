@@ -485,6 +485,7 @@ plugin.yaml 100%[==>]     909  --.-KB/s    in 0s
 ```
 
 ### Relocate the Plugin and Yaml to your registry
+
 ```shell
 TRIVY_AQUA_PLUGIN_VERSION="v0.115.6"
 REPOSITORY_URL="registry.company.com/project_name/trivy-aqua-plugin:$TRIVY_AQUA_PLUGIN_VERSION"
